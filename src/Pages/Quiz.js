@@ -16,6 +16,7 @@ import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
 import { Container } from "@mui/system";
+<<<<<<< HEAD
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -25,6 +26,9 @@ import FormLabel from "@mui/material/FormLabel";
 import { Level1 } from "../Components/Level1";
 import { Level2 } from "../Components/Level2";
 import { Level3 } from "../Components/Level3";
+=======
+import { Level1 } from "../Components/Level1";
+>>>>>>> 4d3cd214ec4e6e3fc08f8d6fbfcb8eaac1748668
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -191,31 +195,6 @@ export const Quiz = () => {
     setActiveStep(0);
   };
 
-  const [value, setValue] = React.useState("");
-  const [error, setError] = React.useState(false);
-  const [helperText, setHelperText] = React.useState("Choose wisely");
-
-  const handleRadioChange = (event) => {
-    setValue(event.target.value);
-    console.log(event.target.value);
-    setHelperText(" ");
-    setError(false);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (value === "best") {
-      setHelperText("You got it!");
-      setError(false);
-    } else if (value === "worst") {
-      setHelperText("Sorry, wrong answer!");
-      setError(true);
-    } else {
-      setHelperText("Please select an option.");
-      setError(true);
-    }
-  };
   return (
     <>
       <Container className="mt-4 border-bottom">
@@ -260,7 +239,10 @@ export const Quiz = () => {
               ) : (
                 <Level3 />
               )}
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+
+              
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2, mb:3 }}>
+
                 <Button
                   color="inherit"
                   disabled={activeStep === 0}
