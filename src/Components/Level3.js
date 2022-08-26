@@ -53,7 +53,7 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question1"
               value={value}
               onChange={handleRadioChange}
             >
@@ -89,24 +89,24 @@ export const Level3 = (props) => {
               id="demo-controlled-radio-buttons-group"
               style={{ textAlign: "left" }}
             >
-              2) How will you dressed up, based on
+              2) Which Color you want
             </FormLabel>
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question2"
               value={value}
               onChange={handleRadioChange}
             >
               <FormControlLabel
                 value="best"
                 control={<Radio />}
-                label="A)	The outfit you planned"
+                label="A)	Red"
               />
               <FormControlLabel
                 value="worst"
                 control={<Radio />}
-                label="B)	Whatever is good to have "
+                label="B)	Green"
               />
               <FormControlLabel
                 value="worst"
@@ -133,7 +133,7 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question3"
               value={value}
               onChange={handleRadioChange}
             >
@@ -173,7 +173,7 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question4"
               value={value}
               onChange={handleRadioChange}
             >
@@ -214,7 +214,7 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question5"
               value={value}
               onChange={handleRadioChange}
             >
@@ -266,7 +266,7 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question1"
               value={value}
               onChange={handleRadioChange}
             >
@@ -306,7 +306,7 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question2"
               value={value}
               onChange={handleRadioChange}
             >
@@ -345,7 +345,7 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question3"
               value={value}
               onChange={handleRadioChange}
             >
@@ -385,7 +385,7 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question4"
               value={value}
               onChange={handleRadioChange}
             >
@@ -425,7 +425,7 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
+              name="Question5"
               value={value}
               onChange={handleRadioChange}
             >
@@ -438,45 +438,6 @@ export const Level3 = (props) => {
                 value="worst"
                 control={<Radio />}
                 label="B)	 Cry little"
-              />
-              <FormControlLabel
-                value="worst"
-                control={<Radio />}
-                label="C)	Either of both A) & B) i won’t do"
-              />
-            </RadioGroup>
-            <FormHelperText>{helperText}</FormHelperText>
-          </FormControl>
-
-          {/* quest 6 */}
-          <FormControl
-            sx={{ m: 3 }}
-            error={error}
-            variant="standard"
-            style={{ display: "flex" }}
-          >
-            <FormLabel
-              id="demo-controlled-radio-buttons-group"
-              style={{ textAlign: "left" }}
-            >
-              6) When you eat Gems chocolate , you tempted to:
-            </FormLabel>
-            <RadioGroup
-              style={{ textAlign: "left" }}
-              aria-labelledby="demo-error-radios"
-              name="quiz"
-              value={value}
-              onChange={handleRadioChange}
-            >
-              <FormControlLabel
-                value="best"
-                control={<Radio />}
-                label="A)	Arrange them in colours and then eat in order"
-              />
-              <FormControlLabel
-                value="worst"
-                control={<Radio />}
-                label="B)	Will hide in class and eat during my bored times"
               />
               <FormControlLabel
                 value="worst"
