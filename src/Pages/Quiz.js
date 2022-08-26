@@ -1,4 +1,3 @@
-
 import PropTypes from "prop-types";
 import * as React from "react";
 import { makeStyles, styled } from "@mui/material/styles";
@@ -23,6 +22,9 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
+import { Level1 } from "../Components/Level1";
+import { Level2 } from "../Components/Level2";
+import { Level3 } from "../Components/Level3";
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -217,7 +219,7 @@ export const Quiz = () => {
   return (
     <>
       <Container className="mt-4 border-bottom">
-        <Stack sx={{ width: "100%" }} >
+        <Stack sx={{ width: "100%" }}>
           <Stepper activeStep={activeStep}>
             {steps.map((label, index) => {
               const stepProps = {};
@@ -232,12 +234,9 @@ export const Quiz = () => {
               }
               return (
                 <Step key={label} {...stepProps}>
-                  <StepLabel StepIconComponent={ColorlibStepIcon}>
-                    
-                  </StepLabel>
+                  <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
                   {label}
                 </Step>
-                
               );
             })}
           </Stepper>
@@ -254,34 +253,13 @@ export const Quiz = () => {
             </React.Fragment>
           ) : (
             <React.Fragment>
-              <div className="bg-white ">
-                <form  onSubmit={handleSubmit}>
-                  <FormControl sx={{ m: 3 }} error={error} variant="standard">
-                    <FormLabel id="demo-controlled-radio-buttons-group">
-
-                    1) Get started by including Bootstrap’s production-ready CSS and JavaScript via CDN without the need for any build steps. See it in practice with this
-                    </FormLabel>
-                    <RadioGroup
-                      aria-labelledby="demo-error-radios"
-                      name="quiz"
-                      value={value}
-                      onChange={handleRadioChange}
-                    >
-                      <FormControlLabel
-                        value="best"
-                        control={<Radio />}
-                        label="Include Bootstrap’s CSS and JS. "
-                      />
-                      <FormControlLabel
-                        value="worst"
-                        control={<Radio />}
-                        label="Include Bootstrap’s CSS and JS. "
-                      />
-                    </RadioGroup>
-                    <FormHelperText>{helperText}</FormHelperText>
-                  </FormControl>
-                </form>
-              </div>
+              {activeStep === 0 ? (
+                <Level1 />
+              ) : activeStep === 1 ? (
+                <Level2 type="" />
+              ) : (
+                <Level3 />
+              )}
               <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
                 <Button
                   color="inherit"
@@ -291,12 +269,6 @@ export const Quiz = () => {
                 >
                   Back
                 </Button>
-                <Box sx={{ flex: "1 1 auto" }} />
-                {isStepOptional(activeStep) && (
-                  <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
-                    Skip
-                  </Button>
-                )}
 
                 <Button onClick={handleNext}>
                   {activeStep === steps.length - 1 ? "Finish" : "Next"}
@@ -308,5 +280,4 @@ export const Quiz = () => {
       </Container>
     </>
   );
- };
-
+};
