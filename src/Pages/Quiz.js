@@ -1,3 +1,3 @@
 export const Quiz = () => {
-  return <></>;
+  return <>hi</>;
 };

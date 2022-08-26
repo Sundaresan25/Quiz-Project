@@ -1,0 +1,77 @@
+.form-body {
+  font-family: "Raleway", sans-serif;
+  background: -webkit-radial-gradient(circle, #e0bfdb, #b166a9);
+  background: -o-radial-gradient(circle, #e0bfdb, #b166a9);
+  background: -moz-radial-gradient(circle, #e0bfdb, #b166a9);
+  background: radial-gradient(circle, #e0bfdb, #b166a9);
+}
+.form {
+  /* padding: 70px; */
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+}
+
+.form-group input {
+  border: none;
+  box-shadow: none;
+  margin-bottom: 50px;
+  border-radius: 0;
+  border-bottom: 1px solid #b268aa;
+  color: #b268aa;
+  font-size: 18px;
+}
+
+.form-group input:focus {
+  box-shadow: none;
+  border-bottom: 1px solid #ccc;
+}
+
+input.form-control {
+  padding: 0;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #b268aa;
+}
+
+.form-control:-moz-placeholder {
+  color: #b268aa;
+}
+
+.form-control::-moz-placeholder {
+  color: #b268aa;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #b268aa;
+}
+
+.form-control:focus::-webkit-input-placeholder {
+  color: #ccc;
+}
+
+.form-control:focus:-moz-placeholder {
+  color: #ccc;
+}
+
+.form-control:focus::-moz-placeholder:focus {
+  color: #ccc;
+}
+
+.form-control:focus:-ms-input-placeholde:focusr {
+  color: #ccc;
+}
+
+.btn.btn-create-account,
+.btn-fb-account {
+  height: 60px;
+  line-height: 50px;
+  box-shadow: none;
+  border: none;
+  font-size: 1.25em;
+}
+
+.btn.btn-create-account {
+  background: #b268aa;
+}
