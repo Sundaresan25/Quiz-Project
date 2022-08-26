@@ -22,9 +22,15 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
+
+import { toast } from "react-hot-toast";
+
+
 import { Level1 } from "../Components/Level1";
 import { Level3 } from "../Components/Level3";
+
 import { Level2  } from "../Components/Level2";
+
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -149,6 +155,10 @@ export const Quiz = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
+
+
+  const [level2type, setLevel2type] = React.useState("");
+
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -157,36 +167,13 @@ export const Quiz = () => {
     return skipped.has(step);
   };
 
-  const handleNext = () => {
-    let newSkipped = skipped;
-    if (isStepSkipped(activeStep)) {
-      newSkipped = new Set(newSkipped.values());
-      newSkipped.delete(activeStep);
-    }
+  // const handleNext = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  // };
 
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped(newSkipped);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
-
-  const handleSkip = () => {
-    if (!isStepOptional(activeStep)) {
-      // You probably want to guard against something like this,
-      // it should never occur unless someone's actively trying to break something.
-      throw new Error("You can't skip a step that isn't optional.");
-    }
-
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    setSkipped((prevSkipped) => {
-      const newSkipped = new Set(prevSkipped.values());
-      newSkipped.add(activeStep);
-      return newSkipped;
-    });
-  };
-
+  // const handleBack = () => {
+  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  // };
   const handleReset = () => {
     setActiveStep(0);
   };
@@ -235,14 +222,55 @@ export const Quiz = () => {
           ) : (
             <React.Fragment>
               {activeStep === 0 ? (
-                <Level1 />
+
+                <Level1
+                  submitHandler={(e, form) => {
+                    e.preventDefault();
+                    if (activeStep === 0) {
+                      if (
+                        form.Question1 === "" ||
+                        form.Question2 === "" ||
+                        form.Question3 === "" ||
+                        form.Question4 === "" ||
+                        form.Question5 === "" ||
+                        form.Question6 === ""
+                      ) {
+                        toast.error("Answer all the Questions");
+                      } else {
+                        let optionData = Object.values(form);
+                        let OptionA = optionData.filter(
+                          (value) => value === "A"
+                        ).length;
+                        let OptionB = optionData.filter(
+                          (value) => value === "B"
+                        ).length;
+                        let OptionC = optionData.filter(
+                          (value) => value === "C"
+                        ).length;
+                        if (OptionA > OptionB && OptionA > OptionC) {
+                          setLevel2type("Left");
+                          console.log(OptionA, OptionB);
+                          setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                        } else if (OptionB > OptionA && OptionB > OptionC) {
+                          setLevel2type("Right");
+                          setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                        } else if (OptionC > OptionA && OptionC > OptionB) {
+                        } else if (OptionA === OptionB) {
+                          setLevel2type("Middle");
+                          setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                        }
+                      }
+                    }
+                  }}
+                />
               ) : activeStep === 1 ? (
-                <Level2 />
+                <Level2 type={level2type} />
+
               ) : (
                 <Level3 />
               )}
 
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2, mb: 3 }}>
+              {/* <Box sx={{ display: "flex", flexDirection: "row", pt: 2, mb: 3 }}>
                 <Button
                   color="inherit"
                   disabled={activeStep === 0}
@@ -255,7 +283,7 @@ export const Quiz = () => {
                 <Button  onClick={handleNext}>
                   {activeStep === steps.length - 1 ? "Finish" : "Next"}
                 </Button>
-              </Box>
+              </Box> */}
             </React.Fragment>
           )}
         </Stack>
