@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
+import { Player } from "@lottiefiles/react-lottie-player";
 // import { XIcon } from "../../assets/icons";
 
 export const Popuop = (props) => {
@@ -44,8 +45,16 @@ export const Popuop = (props) => {
           }}
           onClick={onClickHandler}
         />
-        <h5 className="my-3 font-weight-bold" style={{ textAlign: "left" }}>
-          Hello
+        <Player
+          src="https://assets5.lottiefiles.com/packages/lf20_4chtroo0.json"
+          background="transparent"
+          speed={1}
+          style={{ height: "200px", width: "200px" }}
+          className="head-img"
+          autoplay
+        />
+        <h5 className="my-3 font-weight-bold" style={{ textAlign: "center" }}>
+        Yup!! You're done with your brain dominance testing
         </h5>
         <p>{popsValue}</p>
       </div>
