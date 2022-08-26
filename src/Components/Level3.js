@@ -7,7 +7,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 
 export const Level3 = (props) => {
-  const { type } = props;
+  const { type, leftData, rightData } = props;
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");
@@ -53,8 +53,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question1"
-              value={value}
+              name="Question7"
+              value={leftData.Question7}
               onChange={handleRadioChange}
             >
               <FormControlLabel
@@ -94,8 +94,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question2"
-              value={value}
+              name="Question8"
+              value={leftData.Question8}
               onChange={handleRadioChange}
             >
               <FormControlLabel
@@ -132,8 +132,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question3"
-              value={value}
+              name="Question9"
+              value={leftData.Question9}
               onChange={handleRadioChange}
             >
               <FormControlLabel
@@ -172,8 +172,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question4"
-              value={value}
+              name="Question10"
+              value={leftData.Question10}
               onChange={handleRadioChange}
             >
               <FormControlLabel
@@ -213,8 +213,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question5"
-              value={value}
+              name="Question11"
+              value={leftData.Question11}
               onChange={handleRadioChange}
             >
               <FormControlLabel
@@ -263,8 +263,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="quiz"
-              value={value}
+              name="Question7"
+              value={rightData.Question7}
               onChange={handleRadioChange}
             >
               <FormControlLabel
@@ -298,8 +298,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question2"
-              value={value}
+              name="Question8"
+              value={rightData.Question8}
               onChange={handleRadioChange}
             >
               <FormControlLabel
@@ -337,8 +337,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question3"
-              value={value}
+              name="Question9"
+              value={rightData.Question9}
               onChange={handleRadioChange}
             >
               <FormControlLabel
@@ -377,8 +377,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question4"
-              value={value}
+              name="Question10"
+              value={rightData.Question10}
               onChange={handleRadioChange}
             >
               <FormControlLabel
@@ -417,8 +417,8 @@ export const Level3 = (props) => {
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question5"
-              value={value}
+              name="Question11"
+              value={rightData.Question11}
               onChange={handleRadioChange}
             >
               <FormControlLabel

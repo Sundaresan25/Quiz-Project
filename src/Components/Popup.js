@@ -4,7 +4,7 @@ import CloseIcon from "@mui/icons-material/Close";
 // import { XIcon } from "../../assets/icons";
 
 export const Popuop = (props) => {
-  const { onClickHandler } = props;
+  const { onClickHandler, popsValue } = props;
   return (
     <div
       style={{
@@ -47,6 +47,7 @@ export const Popuop = (props) => {
         <h5 className="my-3 font-weight-bold" style={{ textAlign: "left" }}>
           Hello
         </h5>
+        <p>{popsValue}</p>
       </div>
     </div>
   );

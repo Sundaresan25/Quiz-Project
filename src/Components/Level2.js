@@ -189,8 +189,8 @@ export const Level2 = (props) => {
                 style={{ textAlign: "left" }}
               >
                 1)Imagine you are been providing a job what will you from the
-                below (pick any2)Imagine you are been providing a job what will
-                you from the below (pick any2)
+                below Imagine you are been providing a job what will you from
+                the below
               </FormLabel>
               <RadioGroup
                 aria-labelledby="demo-error-radios"
@@ -238,13 +238,13 @@ export const Level2 = (props) => {
                 id="demo-controlled-radio-buttons-group"
                 style={{ textAlign: "left" }}
               >
-                2) Which color you like
+                2) . Pick any of the job that you will not prefer
               </FormLabel>
               <RadioGroup
                 style={{ textAlign: "left" }}
                 aria-labelledby="demo-error-radios"
                 name="Question2"
-                value={value}
+                value={leftData.Question2}
                 onChange={onChangeLeft}
               >
                 <FormControlLabel
@@ -278,7 +278,6 @@ export const Level2 = (props) => {
             <FormControl
               sx={{ m: 3 }}
               error={error}
-              value={leftData.Question3}
               variant="standard"
               style={{ display: "flex" }}
             >
@@ -291,7 +290,7 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question3"
-                value={value}
+                value={leftData.Question3}
                 onChange={onChangeLeft}
                 style={{ textAlign: "left" }}
               >
@@ -329,7 +328,7 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question4"
-                value={value}
+                value={leftData.Question4}
                 onChange={onChangeLeft}
                 style={{ textAlign: "left" }}
               >
@@ -366,7 +365,7 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question5"
-                value={value}
+                value={leftData.Question5}
                 onChange={onChangeLeft}
                 style={{ textAlign: "left" }}
               >
@@ -391,7 +390,7 @@ export const Level2 = (props) => {
             <FormControl
               sx={{ m: 3 }}
               error={error}
-              value={leftData.Question5}
+              value={leftData.Question6}
               variant="standard"
               style={{ display: "flex" }}
             >
@@ -510,7 +509,7 @@ export const Level2 = (props) => {
                 style={{ textAlign: "left" }}
                 aria-labelledby="demo-error-radios"
                 name="Question2"
-                value={value}
+                value={rightData.Question1}
                 onChange={handleRadioChange}
               >
                 <FormControlLabel
@@ -557,7 +556,7 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question3"
-                value={value}
+                value={rightData.Question1}
                 onChange={handleRadioChange}
                 style={{ textAlign: "left" }}
               >
@@ -595,7 +594,7 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question4"
-                value={value}
+                value={rightData.Question1}
                 onChange={handleRadioChange}
                 style={{ textAlign: "left" }}
               >
@@ -628,7 +627,7 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question5"
-                value={value}
+                value={rightData.Question5}
                 onChange={handleRadioChange}
                 style={{ textAlign: "left" }}
               >
@@ -666,7 +665,7 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question6"
-                value={value}
+                value={rightData.Question1}
                 onChange={handleRadioChange}
                 style={{ textAlign: "left" }}
               >
@@ -685,7 +684,7 @@ export const Level2 = (props) => {
             </FormControl>
             <button
               className="btn btn-primary m-2"
-              // onClick={(e) => submitHandler(e, form)}
+              onClick={(e) => submitHandler(e, type)}
             >
               {" "}
               Next{" "}

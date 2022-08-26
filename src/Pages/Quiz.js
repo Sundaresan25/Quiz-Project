@@ -182,6 +182,7 @@ export const Quiz = () => {
     Question11: "",
     Question12: "",
   });
+  const [popsValue, setPopupValue] = React.useState();
 
   function onChangeLeft(e) {
     setLeftData((prevState) => {
@@ -205,16 +206,30 @@ export const Quiz = () => {
       if (leftData.Question4 === "") {
         toast.error("Fill the All Question");
       } else if (leftData.Question4 === "Logical reasoning") {
+        setPopupValue();
+        setModalState(true);
       } else if (leftData.Question4 === "Practical solution") {
+        setPopupValue();
+        setModalState(true);
       } else {
+        setPopupValue();
+        setModalState(true);
       }
     } else {
       if (rightData.Question1 === "") {
         toast.error("Fill the All Question");
-      } else if (rightData.Question1 === "") {
-      } else if (rightData.Question1 === "") {
-      } else if (rightData.Question1 === "") {
-      } else if (rightData.Question1 === "") {
+      } else if (rightData.Question1 === "Athletics") {
+        setPopupValue();
+        setModalState(true);
+      } else if (rightData.Question1 === "Drama") {
+        setPopupValue();
+        setModalState(true);
+      } else if (rightData.Question1 === "Art work ") {
+        setPopupValue();
+        setModalState(true);
+      } else if (rightData.Question1 === "Music") {
+        setPopupValue();
+        setModalState(true);
       }
     }
   }
@@ -241,7 +256,10 @@ export const Quiz = () => {
     <>
       {modalState && (
         <>
-          <Popuop onClickHandler={() => setModalState(false)} />
+          <Popuop
+            onClickHandler={() => setModalState(false)}
+            popsValue={popsValue}
+          />
         </>
       )}
 
@@ -345,6 +363,15 @@ export const Quiz = () => {
 
               {activeStep === 2 && (
                 <div className="text-center">
+                  <button
+                    className="btn btn-primary m-2"
+                    onChangeLeft={onChangeLeft}
+                    onClick={() =>
+                      setActiveStep((prevActiveStep) => prevActiveStep - 1)
+                    }
+                  >
+                    Back
+                  </button>
                   <button
                     className="btn btn-primary m-2"
                     onChangeLeft={onChangeLeft}
