@@ -481,7 +481,7 @@ export const Level3 = () => {
 
         {/* quest 6 */}
       </form>
-      a
+      
     </>
   );
 };
