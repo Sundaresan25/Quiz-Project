@@ -245,20 +245,15 @@ export const Quiz = () => {
                 <Level3 />
               )}
 
-              {/* <Box sx={{ display: "flex", flexDirection: "row", pt: 2, mb: 3 }}>
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2, mb: 3 }}>
                 <Button
-                  color="inherit"
-                  disabled={activeStep === 0}
-                  onClick={handleBack}
-                  sx={{ mr: 1 }}
+                  onClick={() =>
+                    setActiveStep((prevActiveStep) => prevActiveStep + 2)
+                  }
                 >
-                  Back
-                </Button>
-
-                <Button onClick={handleNext}>
                   {activeStep === steps.length - 1 ? "Finish" : "Next"}
                 </Button>
-              </Box> */}
+              </Box>
             </React.Fragment>
           )}
         </Stack>
