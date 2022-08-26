@@ -5,10 +5,7 @@ import Stack from "@mui/material/Stack";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import Check from "@mui/icons-material/Check";
-import SettingsIcon from "@mui/icons-material/Settings";
-import GroupAddIcon from "@mui/icons-material/GroupAdd";
-import VideoLabelIcon from "@mui/icons-material/VideoLabel";
+
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -16,12 +13,7 @@ import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
 import { Container } from "@mui/system";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormLabel from "@mui/material/FormLabel";
+
 import { Level1 } from "../Components/Level1";
 import { Level2 } from "../Components/Level2";
 import { Level3 } from "../Components/Level3";
@@ -148,7 +140,23 @@ const steps = ["Level I", "Level II", "Submit"];
 export const Quiz = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
+  const [form, setForm] = React.useState({
+    Question1: "",
+    Question2: "",
+    Question3: "",
+    Question4: "",
+    Question5: "",
+    Question6: "",
+  });
 
+  function onChangeHandler(e) {
+    setForm((prevState) => {
+      return {
+        ...prevState,
+        [e.target.name]: e.target.value,
+      };
+    });
+  }
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -229,7 +237,7 @@ export const Quiz = () => {
           ) : (
             <React.Fragment>
               {activeStep === 0 ? (
-                <Level1 />
+                <Level1 onChangeHandler={onChangeHandler} />
               ) : activeStep === 1 ? (
                 <Level2 type="" />
               ) : (
