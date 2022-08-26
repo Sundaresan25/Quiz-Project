@@ -1,4 +1,3 @@
-
 import PropTypes from "prop-types";
 import * as React from "react";
 import { makeStyles, styled } from "@mui/material/styles";
@@ -17,12 +16,7 @@ import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
 import { Container } from "@mui/system";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormLabel from "@mui/material/FormLabel";
+import { Level1 } from "../Components/Level1";
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -189,35 +183,10 @@ export const Quiz = () => {
     setActiveStep(0);
   };
 
-  const [value, setValue] = React.useState("");
-  const [error, setError] = React.useState(false);
-  const [helperText, setHelperText] = React.useState("Choose wisely");
-
-  const handleRadioChange = (event) => {
-    setValue(event.target.value);
-    console.log(event.target.value);
-    setHelperText(" ");
-    setError(false);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (value === "best") {
-      setHelperText("You got it!");
-      setError(false);
-    } else if (value === "worst") {
-      setHelperText("Sorry, wrong answer!");
-      setError(true);
-    } else {
-      setHelperText("Please select an option.");
-      setError(true);
-    }
-  };
   return (
     <>
       <Container className="mt-4 border-bottom">
-        <Stack sx={{ width: "100%" }} >
+        <Stack sx={{ width: "100%" }}>
           <Stepper activeStep={activeStep}>
             {steps.map((label, index) => {
               const stepProps = {};
@@ -232,12 +201,9 @@ export const Quiz = () => {
               }
               return (
                 <Step key={label} {...stepProps}>
-                  <StepLabel StepIconComponent={ColorlibStepIcon}>
-                    
-                  </StepLabel>
+                  <StepLabel StepIconComponent={ColorlibStepIcon}></StepLabel>
                   {label}
                 </Step>
-                
               );
             })}
           </Stepper>
@@ -254,35 +220,10 @@ export const Quiz = () => {
             </React.Fragment>
           ) : (
             <React.Fragment>
-              <div className="bg-white ">
-                <form  onSubmit={handleSubmit}>
-                  <FormControl sx={{ m: 3 }} error={error} variant="standard">
-                    <FormLabel id="demo-controlled-radio-buttons-group">
-
-                    1) Get started by including Bootstrap’s production-ready CSS and JavaScript via CDN without the need for any build steps. See it in practice with this
-                    </FormLabel>
-                    <RadioGroup
-                      aria-labelledby="demo-error-radios"
-                      name="quiz"
-                      value={value}
-                      onChange={handleRadioChange}
-                    >
-                      <FormControlLabel
-                        value="best"
-                        control={<Radio />}
-                        label="Include Bootstrap’s CSS and JS. "
-                      />
-                      <FormControlLabel
-                        value="worst"
-                        control={<Radio />}
-                        label="Include Bootstrap’s CSS and JS. "
-                      />
-                    </RadioGroup>
-                    <FormHelperText>{helperText}</FormHelperText>
-                  </FormControl>
-                </form>
+              <div className="bg-white mt-4 ">
+                <Level1 />
               </div>
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2, mb:3 }}>
                 <Button
                   color="inherit"
                   disabled={activeStep === 0}
@@ -308,5 +249,4 @@ export const Quiz = () => {
       </Container>
     </>
   );
- };
-
+};
