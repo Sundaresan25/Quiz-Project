@@ -1,3 +1,4 @@
+
 import PropTypes from "prop-types";
 import * as React from "react";
 import { makeStyles, styled } from "@mui/material/styles";
@@ -307,4 +308,5 @@ export const Quiz = () => {
       </Container>
     </>
   );
-};
+ };
+
