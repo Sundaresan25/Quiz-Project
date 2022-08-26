@@ -116,7 +116,6 @@ export const Level3 = (props) => {
             </RadioGroup>
             <FormHelperText>{helperText}</FormHelperText>
           </FormControl>
-
           {/* quest 3 */}
           <FormControl
             sx={{ m: 3 }}
@@ -246,8 +245,6 @@ export const Level3 = (props) => {
             </RadioGroup>
             <FormHelperText>{helperText}</FormHelperText>
           </FormControl>
-
-          {/* quest 6 */}
         </form>
       ) : (
         <form onSubmit={handleSubmit}>
@@ -261,29 +258,24 @@ export const Level3 = (props) => {
               id="demo-controlled-radio-buttons-group"
               style={{ textAlign: "left" }}
             >
-              1) Imagine you’re given a writing assessment.Select any of them :
+              1) During your PT period , what sport will you prefer
             </FormLabel>
             <RadioGroup
               style={{ textAlign: "left" }}
               aria-labelledby="demo-error-radios"
-              name="Question1"
+              name="quiz"
               value={value}
               onChange={handleRadioChange}
             >
               <FormControlLabel
                 value="best"
                 control={<Radio />}
-                label="A)	Describe the planets in the solar system "
+                label="A)	Team sport ( cricket ,footbal etc.,)"
               />
               <FormControlLabel
                 value="worst"
                 control={<Radio />}
-                label="B)	Write about your favorite fairy tale that you want to be.  "
-              />
-              <FormControlLabel
-                value="worst"
-                control={<Radio />}
-                label="C)	Either of both A) & B) i won’t do   "
+                label="B)	Individual sport ( Running , jumping etc,.)"
               />
             </RadioGroup>
             <FormHelperText>{helperText}</FormHelperText>

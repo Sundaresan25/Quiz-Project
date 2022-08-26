@@ -4,7 +4,8 @@ import { db, storage } from "../Firebase/Firebase";
 import { useNavigate } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import QuizContext from "../QuizContext";
-import { toast } from "react-hot-toast";
+
+import toast from "react-hot-toast";
 
 export const Quizindex = () => {
   const [formState, setFormState] = React.useState(false);
@@ -38,7 +39,7 @@ export const Quizindex = () => {
       formData.age === "" ||
       formData.work === ""
     ) {
-      toast.warn(" All Fields are Required");
+      toast.error(" All Fields are Required");
     } else {
       let dataName = formData.name + d.getTime();
       setDoc(doc(db, "Quiz", dataName), {

@@ -19,6 +19,7 @@ export const Level1 = (props) => {
     Question5: "",
     Question6: "",
   });
+
   function onChangeHandler(e) {
     setForm((prevState) => {
       return {

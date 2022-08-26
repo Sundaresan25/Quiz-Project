@@ -75,3 +75,11 @@ input.form-control {
 .btn.btn-create-account {
   background: #b268aa;
 }
+.popup {
+  width: 35%;
+}
+@media only screen and (max-width: 600px) {
+  .popup {
+    width: 100%;
+  }
+}

@@ -5,7 +5,10 @@ import Stack from "@mui/material/Stack";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-
+import Check from "@mui/icons-material/Check";
+import SettingsIcon from "@mui/icons-material/Settings";
+import GroupAddIcon from "@mui/icons-material/GroupAdd";
+import VideoLabelIcon from "@mui/icons-material/VideoLabel";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -13,11 +16,18 @@ import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
 import { Container } from "@mui/system";
-import { toast } from "react-hot-toast";
-
+import Radio from "@mui/material/Radio";
+import RadioGroup from "@mui/material/RadioGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormControl from "@mui/material/FormControl";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormLabel from "@mui/material/FormLabel";
+import toast from "react-hot-toast";
 import { Level1 } from "../Components/Level1";
-import { Level2 } from "../Components/Level2";
 import { Level3 } from "../Components/Level3";
+
+import { Level2 } from "../Components/Level2";
+import { Popuop } from "../Components/Popup";
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -141,7 +151,74 @@ const steps = ["Level I", "Level II", "Submit"];
 export const Quiz = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
+  const [modalState, setModalState] = React.useState(false);
+
   const [level2type, setLevel2type] = React.useState("");
+  const [leftData, setLeftData] = React.useState({
+    Question1: "",
+    Question2: "",
+    Question3: "",
+    Question4: "",
+    Question5: "",
+    Question6: "",
+    Question7: "",
+    Question8: "",
+    Question9: "",
+    Question10: "",
+    Question11: "",
+    Question12: "",
+  });
+  const [rightData, setRightData] = React.useState({
+    Question1: "",
+    Question2: "",
+    Question3: "",
+    Question4: "",
+    Question5: "",
+    Question6: "",
+    Question7: "",
+    Question8: "",
+    Question9: "",
+    Question10: "",
+    Question11: "",
+    Question12: "",
+  });
+
+  function onChangeLeft(e) {
+    setLeftData((prevState) => {
+      return {
+        ...prevState,
+        [e.target.name]: e.target.value,
+      };
+    });
+  }
+  function onChangeRight(e) {
+    setRightData((prevState) => {
+      return {
+        ...prevState,
+        [e.target.name]: e.target.value,
+      };
+    });
+  }
+
+  function finalHandler(e) {
+    if (level2type === "Left") {
+      if (leftData.Question4 === "") {
+        toast.error("Fill the All Question");
+      } else if (leftData.Question4 === "Logical reasoning") {
+      } else if (leftData.Question4 === "Practical solution") {
+      } else {
+      }
+    } else {
+      if (rightData.Question1 === "") {
+        toast.error("Fill the All Question");
+      } else if (rightData.Question1 === "") {
+      } else if (rightData.Question1 === "") {
+      } else if (rightData.Question1 === "") {
+      } else if (rightData.Question1 === "") {
+      }
+    }
+  }
+
   const isStepOptional = (step) => {
     return step === 1;
   };
@@ -150,19 +227,24 @@ export const Quiz = () => {
     return skipped.has(step);
   };
 
-  // const handleNext = () => {
-  //   setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  // };
-
-  // const handleBack = () => {
-  //   setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  // };
   const handleReset = () => {
     setActiveStep(0);
+  };
+  const [popup, setPopup] = React.useState(false);
+
+  const handlePopup = () => {
+    // Change state to the opposite (to ture) when checkbox changes
+    setPopup(!popup);
   };
 
   return (
     <>
+      {modalState && (
+        <>
+          <Popuop onClickHandler={() => setModalState(false)} />
+        </>
+      )}
+
       <Container className="mt-4 border-bottom">
         <Stack sx={{ width: "100%" }}>
           <Stepper activeStep={activeStep}>
@@ -231,6 +313,7 @@ export const Quiz = () => {
                           setLevel2type("Right");
                           setActiveStep((prevActiveStep) => prevActiveStep + 1);
                         } else if (OptionC > OptionA && OptionC > OptionB) {
+                          setModalState(true);
                         } else if (OptionA === OptionB) {
                           setLevel2type("Middle");
                           setActiveStep((prevActiveStep) => prevActiveStep + 1);
@@ -240,20 +323,37 @@ export const Quiz = () => {
                   }}
                 />
               ) : activeStep === 1 ? (
-                <Level2 type={level2type} />
+                <Level2
+                  type={level2type}
+                  onChangeLeft={onChangeLeft}
+                  leftData={leftData}
+                  rightData={rightData}
+                  submitHandler={(e, type) => {
+                    e.preventDefault();
+                    setLevel2type(type);
+                    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+                  }}
+                />
               ) : (
-                <Level3 />
+                <Level3
+                  type={level2type}
+                  onChangeRight={onChangeRight}
+                  leftData={leftData}
+                  rightData={rightData}
+                />
               )}
 
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2, mb: 3 }}>
-                <Button
-                  onClick={() =>
-                    setActiveStep((prevActiveStep) => prevActiveStep + 2)
-                  }
-                >
-                  {activeStep === steps.length - 1 ? "Finish" : "Next"}
-                </Button>
-              </Box>
+              {activeStep === 2 && (
+                <div className="text-center">
+                  <button
+                    className="btn btn-primary m-2"
+                    onChangeLeft={onChangeLeft}
+                    onClick={finalHandler}
+                  >
+                    Submit
+                  </button>
+                </div>
+              )}
             </React.Fragment>
           )}
         </Stack>

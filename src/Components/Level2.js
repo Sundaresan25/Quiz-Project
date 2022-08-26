@@ -8,7 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 export const Level2 = (props) => {
-  const { type } = props;
+  const { type, onChangeLeft, submitHandler, leftData, rightData } = props;
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");
@@ -18,22 +18,7 @@ export const Level2 = (props) => {
     Question2: "",
     Question3: "",
   });
-  const [leftData, setLeftData] = React.useState({
-    Question1: "",
-    Question2: "",
-    Question3: "",
-    Question4: "",
-    Question5: "",
-    Question6: "",
-  });
-  const [rightData, setRightData] = React.useState({
-    Question1: "",
-    Question2: "",
-    Question3: "",
-    Question4: "",
-    Question5: "",
-    Question6: "",
-  });
+
   function onChangeHandler(e) {
     setMiddleData((prevState) => {
       return {
@@ -210,17 +195,17 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question1"
-                value={value}
-                onChange={handleRadioChange}
+                value={leftData.Question1}
+                onChange={onChangeLeft}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
-                  value="best"
+                  value="A"
                   control={<Radio />}
                   label="A) Maths / Science teacher   "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="B"
                   control={<Radio />}
                   label="B) Crictal evaluater in a IT firm  "
                 />
@@ -246,6 +231,7 @@ export const Level2 = (props) => {
               sx={{ m: 3 }}
               error={error}
               variant="standard"
+              value={leftData.Question2}
               style={{ display: "flex" }}
             >
               <FormLabel
@@ -259,7 +245,7 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question2"
                 value={value}
-                onChange={handleRadioChange}
+                onChange={onChangeLeft}
               >
                 <FormControlLabel
                   value="best"
@@ -292,6 +278,7 @@ export const Level2 = (props) => {
             <FormControl
               sx={{ m: 3 }}
               error={error}
+              value={leftData.Question3}
               variant="standard"
               style={{ display: "flex" }}
             >
@@ -305,7 +292,7 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question3"
                 value={value}
-                onChange={handleRadioChange}
+                onChange={onChangeLeft}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
@@ -329,6 +316,7 @@ export const Level2 = (props) => {
             <FormControl
               sx={{ m: 3 }}
               error={error}
+              value={leftData.Question4}
               variant="standard"
               style={{ display: "flex" }}
             >
@@ -342,21 +330,21 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question4"
                 value={value}
-                onChange={handleRadioChange}
+                onChange={onChangeLeft}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
-                  value="best"
+                  value="Logical reasoning"
                   control={<Radio />}
                   label="A) Logical reasoning "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="Practical solution "
                   control={<Radio />}
                   label="B) Practical solution "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="Creative solution"
                   control={<Radio />}
                   label="C) Creative solution"
                 />
@@ -379,7 +367,7 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question5"
                 value={value}
-                onChange={handleRadioChange}
+                onChange={onChangeLeft}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
@@ -403,6 +391,7 @@ export const Level2 = (props) => {
             <FormControl
               sx={{ m: 3 }}
               error={error}
+              value={leftData.Question5}
               variant="standard"
               style={{ display: "flex" }}
             >
@@ -416,8 +405,8 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question6"
-                value={value}
-                onChange={handleRadioChange}
+                value={leftData.Question6}
+                onChange={onChangeLeft}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
@@ -445,7 +434,7 @@ export const Level2 = (props) => {
             </FormControl>
             <button
               className="btn btn-primary m-2"
-              // onClick={(e) => submitHandler(e, form)}
+              onClick={(e) => submitHandler(e, type)}
             >
               {" "}
               Next{" "}
@@ -470,32 +459,32 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question1"
-                value={value}
+                value={rightData.Question1}
                 onChange={handleRadioChange}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
-                  value="best"
+                  value="Athletics"
                   control={<Radio />}
                   label="A) Athletics "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value=" Drama "
                   control={<Radio />}
                   label="B) Drama  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="Art work "
                   control={<Radio />}
                   label="C) Art work  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="Music"
                   control={<Radio />}
                   label="D) Music  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="standup comedy"
                   control={<Radio />}
                   label="E) standup comedy "
                 />
@@ -505,6 +494,7 @@ export const Level2 = (props) => {
             <FormControl
               sx={{ m: 3 }}
               error={error}
+              value={rightData.Question2}
               variant="standard"
               style={{ display: "flex" }}
             >
@@ -555,6 +545,7 @@ export const Level2 = (props) => {
               sx={{ m: 3 }}
               error={error}
               variant="standard"
+              value={rightData.Question3}
               style={{ display: "flex" }}
             >
               <FormLabel
@@ -592,6 +583,7 @@ export const Level2 = (props) => {
               sx={{ m: 3 }}
               error={error}
               variant="standard"
+              value={rightData.Question4}
               style={{ display: "flex" }}
             >
               <FormLabel
@@ -624,6 +616,7 @@ export const Level2 = (props) => {
               sx={{ m: 3 }}
               error={error}
               variant="standard"
+              value={rightData.Question5}
               style={{ display: "flex" }}
             >
               <FormLabel
@@ -661,6 +654,7 @@ export const Level2 = (props) => {
               sx={{ m: 3 }}
               error={error}
               variant="standard"
+              value={rightData.Question6}
               style={{ display: "flex" }}
             >
               <FormLabel
