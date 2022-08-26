@@ -25,7 +25,7 @@ import FormLabel from "@mui/material/FormLabel";
 import { Level1 } from "../Components/Level1";
 import { Level2 } from "../Components/Level2";
 import { Level3 } from "../Components/Level3";
-import { Level1 } from "../Components/Level1";
+
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -237,9 +237,7 @@ export const Quiz = () => {
                 <Level3 />
               )}
 
-              
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2, mb:3 }}>
-
+              <Box sx={{ display: "flex", flexDirection: "row", pt: 2, mb: 3 }}>
                 <Button
                   color="inherit"
                   disabled={activeStep === 0}
