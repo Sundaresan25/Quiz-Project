@@ -46,17 +46,17 @@ export const Level1 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	Describe the planets in the solar system "
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	Write about your favorite fairy tale that you want to be.  "
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do   "
             />
@@ -77,17 +77,17 @@ export const Level1 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	The outfit you planned"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	Whatever is good to have "
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do"
             />
@@ -107,17 +107,17 @@ export const Level1 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	To be a director"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	To be a lead actor"
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do"
             />
@@ -138,17 +138,17 @@ export const Level1 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	That's unfair"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	Thinking of i really might be "
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do"
             />
@@ -169,17 +169,17 @@ export const Level1 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	 Control your emotions"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	 Cry little"
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do"
             />
@@ -199,17 +199,17 @@ export const Level1 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	Arrange them in colours and then eat in order"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	Will hide in class and eat during my bored times"
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do"
             />

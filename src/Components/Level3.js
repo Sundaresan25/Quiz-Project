@@ -6,10 +6,8 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 
-
-
 export const Level3 = () => {
-    const [value, setValue] = React.useState("");
+  const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");
 
@@ -47,7 +45,8 @@ export const Level3 = () => {
             id="demo-controlled-radio-buttons-group"
             style={{ textAlign: "left" }}
           >
-            1) You are a HR in a company , a candidate should be hired for manager post , how will you hire a person through interview 
+            1) You are a HR in a company , a candidate should be hired for
+            manager post , how will you hire a person through interview
           </FormLabel>
           <RadioGroup
             style={{ textAlign: "left" }}
@@ -57,18 +56,18 @@ export const Level3 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	By logical , apptitude, reasoning , problem solving ,analysis skills 
               "
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	By their experience and qualification"
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do   "
             />
@@ -98,17 +97,17 @@ export const Level3 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	The outfit you planned"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	Whatever is good to have "
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do"
             />
@@ -137,17 +136,17 @@ export const Level3 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	To be a director"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	To be a lead actor"
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do"
             />
@@ -177,17 +176,17 @@ export const Level3 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	That's unfair"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	Thinking of i really might be "
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do"
             />
@@ -207,7 +206,8 @@ export const Level3 = () => {
             id="demo-controlled-radio-buttons-group"
             style={{ textAlign: "left" }}
           >
-            5) According to you , “ a scientist can be dreamy and unrealistic to be unique in findings and experiments ”
+            5) According to you , “ a scientist can be dreamy and unrealistic to
+            be unique in findings and experiments ”
           </FormLabel>
           <RadioGroup
             style={{ textAlign: "left" }}
@@ -217,27 +217,27 @@ export const Level3 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	strongly agree"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	Agree"
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Partial"
             />
             <FormControlLabel
-              value="worst"
+              value="D"
               control={<Radio />}
               label="D)	Disagree"
             />
             <FormControlLabel
-              value="worst"
+              value="E"
               control={<Radio />}
               label="E)	Strongly disagree"
             />
@@ -266,17 +266,17 @@ export const Level3 = () => {
             onChange={handleRadioChange}
           >
             <FormControlLabel
-              value="best"
+              value="A"
               control={<Radio />}
               label="A)	Arrange them in colours and then eat in order"
             />
             <FormControlLabel
-              value="worst"
+              value="B"
               control={<Radio />}
               label="B)	Will hide in class and eat during my bored times"
             />
             <FormControlLabel
-              value="worst"
+              value="C"
               control={<Radio />}
               label="C)	Either of both A) & B) i won’t do"
             />
@@ -295,7 +295,7 @@ export const Level3 = () => {
             id="demo-controlled-radio-buttons-group"
             style={{ textAlign: "left" }}
           >
-            1) Imagine you’re given a writing assessment.Select any of them :
+            1) During your PT period , what sport will you prefer
           </FormLabel>
           <RadioGroup
             style={{ textAlign: "left" }}
@@ -307,17 +307,12 @@ export const Level3 = () => {
             <FormControlLabel
               value="best"
               control={<Radio />}
-              label="A)	Describe the planets in the solar system "
+              label="A)	Team sport ( cricket ,footbal etc.,)"
             />
             <FormControlLabel
               value="worst"
               control={<Radio />}
-              label="B)	Write about your favorite fairy tale that you want to be.  "
-            />
-            <FormControlLabel
-              value="worst"
-              control={<Radio />}
-              label="C)	Either of both A) & B) i won’t do   "
+              label="B)	Individual sport ( Running , jumping etc,.)"
             />
           </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>
@@ -335,7 +330,7 @@ export const Level3 = () => {
             id="demo-controlled-radio-buttons-group"
             style={{ textAlign: "left" }}
           >
-            2) How will you dressed up, based on
+            2) Which will you enjoy the most ?
           </FormLabel>
           <RadioGroup
             style={{ textAlign: "left" }}
@@ -347,12 +342,12 @@ export const Level3 = () => {
             <FormControlLabel
               value="best"
               control={<Radio />}
-              label="A)	The outfit you planned"
+              label="A)	Going a art gallery museum "
             />
             <FormControlLabel
               value="worst"
               control={<Radio />}
-              label="B)	Whatever is good to have "
+              label="B)	Going a painting class "
             />
             <FormControlLabel
               value="worst"
@@ -374,7 +369,7 @@ export const Level3 = () => {
             id="demo-controlled-radio-buttons-group"
             style={{ textAlign: "left" }}
           >
-            3) In a theatre production, what would you do?
+            3) Which will you enjoy the most ?
           </FormLabel>
           <RadioGroup
             style={{ textAlign: "left" }}
@@ -386,17 +381,12 @@ export const Level3 = () => {
             <FormControlLabel
               value="best"
               control={<Radio />}
-              label="A)	To be a director"
+              label="A)	Singing in your house or concert"
             />
             <FormControlLabel
               value="worst"
               control={<Radio />}
-              label="B)	To be a lead actor"
-            />
-            <FormControlLabel
-              value="worst"
-              control={<Radio />}
-              label="C)	Either of both A) & B) i won’t do"
+              label="B)	Going to a concert to listen others performing "
             />
           </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>
@@ -414,7 +404,8 @@ export const Level3 = () => {
             id="demo-controlled-radio-buttons-group "
             style={{ textAlign: "left" }}
           >
-            4) Someone just told you you're mad. You think to yourself:
+            4) To be a successful Author / poem , what is necessary according to
+            you
           </FormLabel>
           <RadioGroup
             style={{ textAlign: "left" }}
@@ -426,17 +417,17 @@ export const Level3 = () => {
             <FormControlLabel
               value="best"
               control={<Radio />}
-              label="A)	That's unfair"
+              label="A)	knowledged person "
             />
             <FormControlLabel
               value="worst"
               control={<Radio />}
-              label="B)	Thinking of i really might be "
+              label="B)	Logical person "
             />
             <FormControlLabel
               value="worst"
               control={<Radio />}
-              label="C)	Either of both A) & B) i won’t do"
+              label="C)	Creative person"
             />
           </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>
@@ -454,7 +445,8 @@ export const Level3 = () => {
             id="demo-controlled-radio-buttons-group"
             style={{ textAlign: "left" }}
           >
-            5) If you watch a sad movie in your classroom, what would you do
+            5) According to you , a person can be dreamy and unrealistic to be
+            unique in some way”
           </FormLabel>
           <RadioGroup
             style={{ textAlign: "left" }}
@@ -466,60 +458,28 @@ export const Level3 = () => {
             <FormControlLabel
               value="best"
               control={<Radio />}
-              label="A)	 Control your emotions"
+              label="A)	strongly agreee"
             />
             <FormControlLabel
               value="worst"
               control={<Radio />}
-              label="B)	 Cry little"
+              label="B)	Agree"
             />
             <FormControlLabel
               value="worst"
               control={<Radio />}
-              label="C)	Either of both A) & B) i won’t do"
+              label="C)	Partial"
+            />
+            <FormControlLabel
+              value="worst"
+              control={<Radio />}
+              label="D)	Strongly disagree"
             />
           </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>
         </FormControl>
 
         {/* quest 6 */}
-        <FormControl
-          sx={{ m: 3 }}
-          error={error}
-          variant="standard"
-          style={{ display: "flex" }}
-        >
-          <FormLabel
-            id="demo-controlled-radio-buttons-group"
-            style={{ textAlign: "left" }}
-          >
-            6) When you eat Gems chocolate , you tempted to:
-          </FormLabel>
-          <RadioGroup
-            style={{ textAlign: "left" }}
-            aria-labelledby="demo-error-radios"
-            name="quiz"
-            value={value}
-            onChange={handleRadioChange}
-          >
-            <FormControlLabel
-              value="best"
-              control={<Radio />}
-              label="A)	Arrange them in colours and then eat in order"
-            />
-            <FormControlLabel
-              value="worst"
-              control={<Radio />}
-              label="B)	Will hide in class and eat during my bored times"
-            />
-            <FormControlLabel
-              value="worst"
-              control={<Radio />}
-              label="C)	Either of both A) & B) i won’t do"
-            />
-          </RadioGroup>
-          <FormHelperText>{helperText}</FormHelperText>
-        </FormControl>
       </form>
       a
     </>

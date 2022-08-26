@@ -23,9 +23,8 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 import { Level1 } from "../Components/Level1";
-import { Level2 } from "../Components/Level2";
 import { Level3 } from "../Components/Level3";
-
+import { Level2 } from "../Components/Level2";
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -232,7 +231,7 @@ export const Quiz = () => {
               {activeStep === 0 ? (
                 <Level1 />
               ) : activeStep === 1 ? (
-                <Level2 type="" />
+                <Level2 />
               ) : (
                 <Level3 />
               )}
