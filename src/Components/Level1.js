@@ -6,17 +6,11 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 
-export const Level1 = () => {
+export const Level1 = (props) => {
+  const { onChangeHandler } = props;
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");
-
-  const handleRadioChange = (event) => {
-    setValue(event.target.value);
-    console.log(event.target.value);
-    setHelperText(" ");
-    setError(false);
-  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,15 +29,24 @@ export const Level1 = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <FormControl sx={{ m: 3 }} error={error} variant="standard" style={{display:"flex"}}>
-          <FormLabel id="demo-controlled-radio-buttons-group" style={{textAlign:"left"}}>
+        <FormControl
+          sx={{ m: 3 }}
+          error={error}
+          variant="standard"
+          style={{ display: "flex" }}
+        >
+          <FormLabel
+            id="demo-controlled-radio-buttons-group"
+            style={{ textAlign: "left" }}
+          >
             1) Imagine you’re given a writing assessment.Select any of them :
           </FormLabel>
-          <RadioGroup style={{textAlign:"left"}}
+          <RadioGroup
+            style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
-            name="quiz"
+            name="Question1"
             value={value}
-            onChange={handleRadioChange}
+            onChange={onChangeHandler}
           >
             <FormControlLabel
               value="A"
@@ -63,18 +66,27 @@ export const Level1 = () => {
           </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>
         </FormControl>
-        
+
         {/* //quest 2 */}
 
-        <FormControl sx={{ m: 3 }} error={error} variant="standard" style={{display:"flex"}}>
-          <FormLabel id="demo-controlled-radio-buttons-group" style={{textAlign:"left"}}>
-            2) How will you dressed up, based on 
+        <FormControl
+          sx={{ m: 3 }}
+          error={error}
+          variant="standard"
+          style={{ display: "flex" }}
+        >
+          <FormLabel
+            id="demo-controlled-radio-buttons-group"
+            style={{ textAlign: "left" }}
+          >
+            2) How will you dressed up, based on
           </FormLabel>
-          <RadioGroup style={{textAlign:"left"}}
+          <RadioGroup
+            style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
-            name="quiz"
-            value={value}
-            onChange={handleRadioChange}
+            name="Question2"
+            // value={value}
+            onChange={onChangeHandler}
           >
             <FormControlLabel
               value="A"
@@ -96,15 +108,24 @@ export const Level1 = () => {
         </FormControl>
 
         {/* quest 3 */}
-        <FormControl sx={{ m: 3 }} error={error} variant="standard" style={{display:"flex"}}>
-          <FormLabel id="demo-controlled-radio-buttons-group" style={{textAlign:"left"}}>
-            3) In a theatre production, what would you do? 
+        <FormControl
+          sx={{ m: 3 }}
+          error={error}
+          variant="standard"
+          style={{ display: "flex" }}
+        >
+          <FormLabel
+            id="demo-controlled-radio-buttons-group"
+            style={{ textAlign: "left" }}
+          >
+            3) In a theatre production, what would you do?
           </FormLabel>
-          <RadioGroup style={{textAlign:"left"}}
+          <RadioGroup
+            style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
-            name="quiz"
-            value={value}
-            onChange={handleRadioChange}
+            name="Question3"
+            // value={value}
+            onChange={onChangeHandler}
           >
             <FormControlLabel
               value="A"
@@ -127,15 +148,24 @@ export const Level1 = () => {
 
         {/* quest4 */}
 
-        <FormControl sx={{ m: 3 }} error={error} variant="standard" style={{display:"flex"}}>
-          <FormLabel id="demo-controlled-radio-buttons-group " style={{textAlign:"left"}}>
+        <FormControl
+          sx={{ m: 3 }}
+          error={error}
+          variant="standard"
+          style={{ display: "flex" }}
+        >
+          <FormLabel
+            id="demo-controlled-radio-buttons-group "
+            style={{ textAlign: "left" }}
+          >
             4) Someone just told you you're mad. You think to yourself:
           </FormLabel>
-          <RadioGroup style={{textAlign:"left"}}
+          <RadioGroup
+            style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
-            name="quiz"
-            value={value}
-            onChange={handleRadioChange}
+            name="Question4"
+            // value={value}
+            onChange={onChangeHandler}
           >
             <FormControlLabel
               value="A"
@@ -158,15 +188,24 @@ export const Level1 = () => {
 
         {/* quest5 */}
 
-        <FormControl sx={{ m: 3 }} error={error} variant="standard" style={{display:"flex"}}>
-          <FormLabel id="demo-controlled-radio-buttons-group" style={{textAlign:"left"}}>
-            5) If you watch a sad movie in your classroom, what would you do 
+        <FormControl
+          sx={{ m: 3 }}
+          error={error}
+          variant="standard"
+          style={{ display: "flex" }}
+        >
+          <FormLabel
+            id="demo-controlled-radio-buttons-group"
+            style={{ textAlign: "left" }}
+          >
+            5) If you watch a sad movie in your classroom, what would you do
           </FormLabel>
-          <RadioGroup style={{textAlign:"left"}}
+          <RadioGroup
+            style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
-            name="quiz"
-            value={value}
-            onChange={handleRadioChange}
+            name="Question5"
+            // value={value}
+            onChange={onChangeHandler}
           >
             <FormControlLabel
               value="A"
@@ -188,15 +227,24 @@ export const Level1 = () => {
         </FormControl>
 
         {/* quest 6 */}
-        <FormControl sx={{ m: 3 }} error={error} variant="standard" style={{display:"flex"}}>
-          <FormLabel id="demo-controlled-radio-buttons-group" style={{textAlign:"left"}}>
-            6) When you eat Gems chocolate , you tempted to: 
+        <FormControl
+          sx={{ m: 3 }}
+          error={error}
+          variant="standard"
+          style={{ display: "flex" }}
+        >
+          <FormLabel
+            id="demo-controlled-radio-buttons-group"
+            style={{ textAlign: "left" }}
+          >
+            6) When you eat Gems chocolate , you tempted to:
           </FormLabel>
-          <RadioGroup style={{textAlign:"left"}}
+          <RadioGroup
+            style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
-            name="quiz"
-            value={value}
-            onChange={handleRadioChange}
+            name="Question6"
+            // value={value}
+            onChange={onChangeHandler}
           >
             <FormControlLabel
               value="A"
