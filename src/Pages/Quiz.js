@@ -206,29 +206,49 @@ export const Quiz = () => {
       if (leftData.Question4 === "") {
         toast.error("Fill the All Question");
       } else if (leftData.Question4 === "Logical reasoning") {
-        setPopupValue();
+        setPopupValue(
+          "You have you own thinking and  determined to find the answer for your curious thought, and you will be a better researchers and innovator."
+        );
         setModalState(true);
       } else if (leftData.Question4 === "Practical solution") {
-        setPopupValue();
+        setPopupValue(
+          "you are scientific evidence  oriented thicker and will reassure the solution for any problems, and have wide capacity to help the people in your own thoughts."
+        );
         setModalState(true);
       } else {
-        setPopupValue();
+        setPopupValue(
+          "You are  dreamer of your own world and you prefer to make new things and if your creativity appreciated you will become a scientist. "
+        );
         setModalState(true);
       }
     } else {
       if (rightData.Question1 === "") {
         toast.error("Fill the All Question");
       } else if (rightData.Question1 === "Athletics") {
-        setPopupValue();
+        setPopupValue(
+          "You are self driven person and you always targeted toward the goal and you are have inspiration and you will become inspirations to others"
+        );
         setModalState(true);
       } else if (rightData.Question1 === "Drama") {
-        setPopupValue();
+        setPopupValue(
+          "you are great dreamer and you clearly understand the intentions of the others and you like to make the thing clear and perfect."
+        );
         setModalState(true);
       } else if (rightData.Question1 === "Art work ") {
-        setPopupValue();
+        setPopupValue(
+          "you are great fans of the beautiful things and most frequently visualize the enjoyed images in your mind."
+        );
+
         setModalState(true);
       } else if (rightData.Question1 === "Music") {
-        setPopupValue();
+        setPopupValue(
+          "you are a verysharp observer but aways try to be calm and you  appricate the good things of others and you would be good teacher."
+        );
+        setModalState(true);
+      } else {
+        setPopupValue(
+          "You are good observer and discuss more with yourself and you share less but beautiful ad happing thing with others, everybody enjoy you accompany."
+        );
         setModalState(true);
       }
     }
@@ -344,6 +364,7 @@ export const Quiz = () => {
                 <Level2
                   type={level2type}
                   onChangeLeft={onChangeLeft}
+                  onChangeRight={onChangeRight}
                   leftData={leftData}
                   rightData={rightData}
                   submitHandler={(e, type) => {
@@ -355,6 +376,7 @@ export const Quiz = () => {
               ) : (
                 <Level3
                   type={level2type}
+                  onChangeLeft={onChangeLeft}
                   onChangeRight={onChangeRight}
                   leftData={leftData}
                   rightData={rightData}
@@ -365,7 +387,6 @@ export const Quiz = () => {
                 <div className="text-center">
                   <button
                     className="btn btn-primary m-2"
-                    onChangeLeft={onChangeLeft}
                     onClick={() =>
                       setActiveStep((prevActiveStep) => prevActiveStep - 1)
                     }
@@ -374,7 +395,6 @@ export const Quiz = () => {
                   </button>
                   <button
                     className="btn btn-primary m-2"
-                    onChangeLeft={onChangeLeft}
                     onClick={finalHandler}
                   >
                     Submit

@@ -8,7 +8,14 @@ import FormControl from "@mui/material/FormControl";
 import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 export const Level2 = (props) => {
-  const { type, onChangeLeft, submitHandler, leftData, rightData } = props;
+  const {
+    type,
+    onChangeLeft,
+    submitHandler,
+    leftData,
+    rightData,
+    onChangeRight,
+  } = props;
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");
@@ -459,7 +466,7 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question1"
                 value={rightData.Question1}
-                onChange={handleRadioChange}
+                onChange={onChangeRight}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
@@ -510,7 +517,7 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question2"
                 value={rightData.Question1}
-                onChange={handleRadioChange}
+                onChange={onChangeRight}
               >
                 <FormControlLabel
                   value="best"
@@ -557,7 +564,7 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question3"
                 value={rightData.Question1}
-                onChange={handleRadioChange}
+                onChange={onChangeRight}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
@@ -595,7 +602,7 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question4"
                 value={rightData.Question1}
-                onChange={handleRadioChange}
+                onChange={onChangeRight}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
@@ -628,7 +635,7 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question5"
                 value={rightData.Question5}
-                onChange={handleRadioChange}
+                onChange={onChangeRight}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
@@ -666,7 +673,7 @@ export const Level2 = (props) => {
                 aria-labelledby="demo-error-radios"
                 name="Question6"
                 value={rightData.Question1}
-                onChange={handleRadioChange}
+                onChange={onChangeRight}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel

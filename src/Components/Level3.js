@@ -7,7 +7,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 
 export const Level3 = (props) => {
-  const { type, leftData, rightData } = props;
+  const { type, leftData, rightData, onChangeLeft } = props;
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");
@@ -55,7 +55,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question7"
               value={leftData.Question7}
-              onChange={handleRadioChange}
+              onChange={onChangeLeft}
             >
               <FormControlLabel
                 value="best"
@@ -69,7 +69,7 @@ export const Level3 = (props) => {
                 label="B)	By their experience and qualification"
               />
               <FormControlLabel
-                value="worst"
+                value="3"
                 control={<Radio />}
                 label="C)	Either of both A) & B) i won’t do   "
               />
@@ -96,7 +96,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question8"
               value={leftData.Question8}
-              onChange={handleRadioChange}
+              onChange={onChangeLeft}
             >
               <FormControlLabel
                 value="best"
@@ -109,7 +109,7 @@ export const Level3 = (props) => {
                 label="B)	Green"
               />
               <FormControlLabel
-                value="worst"
+                value="2"
                 control={<Radio />}
                 label="C)	Either of both A) & B) i won’t do"
               />
@@ -134,7 +134,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question9"
               value={leftData.Question9}
-              onChange={handleRadioChange}
+              onChange={onChangeLeft}
             >
               <FormControlLabel
                 value="best"
@@ -147,7 +147,7 @@ export const Level3 = (props) => {
                 label="B)	To be a lead actor"
               />
               <FormControlLabel
-                value="worst"
+                value="r"
                 control={<Radio />}
                 label="C)	Either of both A) & B) i won’t do"
               />
@@ -174,7 +174,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question10"
               value={leftData.Question10}
-              onChange={handleRadioChange}
+              onChange={onChangeLeft}
             >
               <FormControlLabel
                 value="best"
@@ -187,7 +187,7 @@ export const Level3 = (props) => {
                 label="B)	Thinking of i really might be "
               />
               <FormControlLabel
-                value="worst"
+                value="t"
                 control={<Radio />}
                 label="C)	Either of both A) & B) i won’t do"
               />
@@ -215,7 +215,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question11"
               value={leftData.Question11}
-              onChange={handleRadioChange}
+              onChange={onChangeLeft}
             >
               <FormControlLabel
                 value="best"
@@ -228,17 +228,17 @@ export const Level3 = (props) => {
                 label="B)	Agree"
               />
               <FormControlLabel
-                value="worst"
+                value="woqst"
                 control={<Radio />}
                 label="C)	Partial"
               />
               <FormControlLabel
-                value="worst"
+                value="dorst"
                 control={<Radio />}
                 label="D)	Disagree"
               />
               <FormControlLabel
-                value="worst"
+                value="aorst"
                 control={<Radio />}
                 label="E)	Strongly disagree"
               />
@@ -313,7 +313,7 @@ export const Level3 = (props) => {
                 label="B)	Whatever is good to have "
               />
               <FormControlLabel
-                value="worst"
+                value="wlrst"
                 control={<Radio />}
                 label="C)	Either of both A) & B) i won’t do"
               />
@@ -347,7 +347,7 @@ export const Level3 = (props) => {
                 label="A)	To be a director"
               />
               <FormControlLabel
-                value="worst"
+                value="rst"
                 control={<Radio />}
                 label="B)	To be a lead actor"
               />
@@ -387,7 +387,7 @@ export const Level3 = (props) => {
                 label="A)	That's unfair"
               />
               <FormControlLabel
-                value="worst"
+                value="wot"
                 control={<Radio />}
                 label="B)	Thinking of i really might be "
               />
@@ -432,7 +432,7 @@ export const Level3 = (props) => {
                 label="B)	 Cry little"
               />
               <FormControlLabel
-                value="worst"
+                value="s"
                 control={<Radio />}
                 label="C)	Either of both A) & B) i won’t do"
               />
