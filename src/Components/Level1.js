@@ -7,28 +7,29 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 
 export const Level1 = (props) => {
-  const { onChangeHandler } = props;
+  const { submitHandler } = props;
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (value === "best") {
-      setHelperText("You got it!");
-      setError(false);
-    } else if (value === "worst") {
-      setHelperText("Sorry, wrong answer!");
-      setError(true);
-    } else {
-      setHelperText("Please select an option.");
-      setError(true);
-    }
-  };
+  const [form, setForm] = React.useState({
+    Question1: "",
+    Question2: "",
+    Question3: "",
+    Question4: "",
+    Question5: "",
+    Question6: "",
+  });
+  function onChangeHandler(e) {
+    setForm((prevState) => {
+      return {
+        ...prevState,
+        [e.target.name]: e.target.value,
+      };
+    });
+  }
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form>
         <FormControl
           sx={{ m: 3 }}
           error={error}
@@ -45,7 +46,7 @@ export const Level1 = (props) => {
             style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
             name="Question1"
-            value={value}
+            value={form.Question1}
             onChange={onChangeHandler}
           >
             <FormControlLabel
@@ -85,7 +86,7 @@ export const Level1 = (props) => {
             style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
             name="Question2"
-            // value={value}
+            value={form.Question2}
             onChange={onChangeHandler}
           >
             <FormControlLabel
@@ -124,7 +125,7 @@ export const Level1 = (props) => {
             style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
             name="Question3"
-            // value={value}
+            value={form.Question3}
             onChange={onChangeHandler}
           >
             <FormControlLabel
@@ -164,7 +165,7 @@ export const Level1 = (props) => {
             style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
             name="Question4"
-            // value={value}
+            value={form.Question4}
             onChange={onChangeHandler}
           >
             <FormControlLabel
@@ -204,7 +205,7 @@ export const Level1 = (props) => {
             style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
             name="Question5"
-            // value={value}
+            value={form.Question5}
             onChange={onChangeHandler}
           >
             <FormControlLabel
@@ -243,7 +244,7 @@ export const Level1 = (props) => {
             style={{ textAlign: "left" }}
             aria-labelledby="demo-error-radios"
             name="Question6"
-            // value={value}
+            value={form.Question6}
             onChange={onChangeHandler}
           >
             <FormControlLabel
@@ -264,6 +265,13 @@ export const Level1 = (props) => {
           </RadioGroup>
           <FormHelperText>{helperText}</FormHelperText>
         </FormControl>
+        <button
+          className="btn btn-primary m-2"
+          onClick={(e) => submitHandler(e, form)}
+        >
+          {" "}
+          Next{" "}
+        </button>
       </form>
     </>
   );
