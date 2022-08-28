@@ -178,7 +178,15 @@ export const Level2 = (props) => {
               </RadioGroup>
               <FormHelperText>{helperText}</FormHelperText>
             </FormControl>
-            <button className="btn btn-primary m-2" onClick={middeleChanger}>
+            <button
+              className="btn text-white px-4 m-2"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to left top, #167aee, #686ff1, #9b5feb, #c646dd, #eb12c6)",
+                borderRadius: "30px",
+              }}
+              onClick={middeleChanger}
+            >
               {" "}
               Next{" "}
             </button>
@@ -217,17 +225,17 @@ export const Level2 = (props) => {
                   label="B) Crictal evaluater in a IT firm  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="t"
                   control={<Radio />}
                   label="C) Researcher  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="q"
                   control={<Radio />}
                   label="D) Travel guide  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="w"
                   control={<Radio />}
                   label="E) Documenter"
                 />
@@ -265,17 +273,17 @@ export const Level2 = (props) => {
                   label="B) Crictal evaluater in a IT firm  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="m"
                   control={<Radio />}
                   label="C) Researcher  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="r"
                   control={<Radio />}
                   label="D) Travel guide  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="w"
                   control={<Radio />}
                   label="E) Documenter"
                 />
@@ -312,7 +320,7 @@ export const Level2 = (props) => {
                   label="B) Science"
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="k"
                   control={<Radio />}
                   label="C) Knowledge"
                 />
@@ -382,7 +390,7 @@ export const Level2 = (props) => {
                   label="A) Huge knowledge about the places "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="woqqqst"
                   control={<Radio />}
                   label="B) Maps and books "
                 />
@@ -421,17 +429,17 @@ export const Level2 = (props) => {
                   label="A) Must be organised workspace "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="waaaast"
                   control={<Radio />}
                   label="B) Can the workspace be messy too"
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="wssssssrst"
                   control={<Radio />}
                   label="C) Clean and natural environment "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="wst"
                   control={<Radio />}
                   label="D) Discussion or conference halls"
                 />
@@ -439,8 +447,13 @@ export const Level2 = (props) => {
               <FormHelperText>{helperText}</FormHelperText>
             </FormControl>
             <button
-              className="btn btn-primary m-2"
+              className="btn text-white px-4 m-2"
               onClick={(e) => submitHandler(e, type)}
+              style={{
+                backgroundImage:
+                  "linear-gradient(to left top, #167aee, #686ff1, #9b5feb, #c646dd, #eb12c6)",
+                borderRadius: "30px",
+              }}
             >
               {" "}
               Next{" "}
@@ -460,7 +473,6 @@ export const Level2 = (props) => {
               >
                 1) Imagine there is an annual day performance in your school
                 happening. Which of the below will you be selecting to perform :
-                (pick any 2)
               </FormLabel>
               <RadioGroup
                 aria-labelledby="demo-error-radios"
@@ -500,7 +512,6 @@ export const Level2 = (props) => {
             <FormControl
               sx={{ m: 3 }}
               error={error}
-              value={rightData.Question2}
               variant="standard"
               style={{ display: "flex" }}
             >
@@ -510,13 +521,13 @@ export const Level2 = (props) => {
               >
                 2) Imagine there is an annual day performance in your school
                 happening. Which of the below will you not be selecting to
-                perform at an any cause : (pick any 2)
+                perform at an any cause
               </FormLabel>
               <RadioGroup
                 style={{ textAlign: "left" }}
                 aria-labelledby="demo-error-radios"
                 name="Question2"
-                value={rightData.Question1}
+                value={rightData.Question2}
                 onChange={onChangeRight}
               >
                 <FormControlLabel
@@ -530,17 +541,17 @@ export const Level2 = (props) => {
                   label="B) Drama  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="worstkkk"
                   control={<Radio />}
                   label="C) Art work  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="worstsasas"
                   control={<Radio />}
                   label="D) Music  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="worstsasa"
                   control={<Radio />}
                   label="E) standup comedy "
                 />
@@ -551,7 +562,6 @@ export const Level2 = (props) => {
               sx={{ m: 3 }}
               error={error}
               variant="standard"
-              value={rightData.Question3}
               style={{ display: "flex" }}
             >
               <FormLabel
@@ -563,7 +573,7 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question3"
-                value={rightData.Question1}
+                value={rightData.Question3}
                 onChange={onChangeRight}
                 style={{ textAlign: "left" }}
               >
@@ -573,12 +583,12 @@ export const Level2 = (props) => {
                   label="A) physical strength "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="wordsst"
                   control={<Radio />}
                   label="B) Mental strength "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="worsadfdsast"
                   control={<Radio />}
                   label="C) Both A & B "
                 />
@@ -589,7 +599,6 @@ export const Level2 = (props) => {
               sx={{ m: 3 }}
               error={error}
               variant="standard"
-              value={rightData.Question4}
               style={{ display: "flex" }}
             >
               <FormLabel
@@ -601,17 +610,17 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question4"
-                value={rightData.Question1}
+                value={rightData.Question4}
                 onChange={onChangeRight}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
-                  value="best"
+                  value="becdvdvczst"
                   control={<Radio />}
                   label="A) Fiction (mystry, science , romance, fairy tale etc.,)"
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="xvczx"
                   control={<Radio />}
                   label="B) Non fiction ( history , autobiography etc.,)"
                 />
@@ -622,7 +631,6 @@ export const Level2 = (props) => {
               sx={{ m: 3 }}
               error={error}
               variant="standard"
-              value={rightData.Question5}
               style={{ display: "flex" }}
             >
               <FormLabel
@@ -649,7 +657,7 @@ export const Level2 = (props) => {
                   label="B) Old paintings "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="wodsvdsvrst"
                   control={<Radio />}
                   label="C)	Either of both A) & B) i won’t do  "
                 />
@@ -660,7 +668,6 @@ export const Level2 = (props) => {
               sx={{ m: 3 }}
               error={error}
               variant="standard"
-              value={rightData.Question6}
               style={{ display: "flex" }}
             >
               <FormLabel
@@ -672,17 +679,17 @@ export const Level2 = (props) => {
               <RadioGroup
                 aria-labelledby="demo-error-radios"
                 name="Question6"
-                value={rightData.Question1}
+                value={rightData.Question6}
                 onChange={onChangeRight}
                 style={{ textAlign: "left" }}
               >
                 <FormControlLabel
-                  value="best"
+                  value="x"
                   control={<Radio />}
                   label="A) To play a musical instrument  "
                 />
                 <FormControlLabel
-                  value="worst"
+                  value="worxzvczvcst"
                   control={<Radio />}
                   label="B) To sing a song"
                 />
@@ -690,8 +697,13 @@ export const Level2 = (props) => {
               <FormHelperText>{helperText}</FormHelperText>
             </FormControl>
             <button
-              className="btn btn-primary m-2"
+              className="btn text-white px-4 m-2"
               onClick={(e) => submitHandler(e, type)}
+              style={{
+                backgroundImage:
+                  "linear-gradient(to left top, #167aee, #686ff1, #9b5feb, #c646dd, #eb12c6)",
+                borderRadius: "30px",
+              }}
             >
               {" "}
               Next{" "}

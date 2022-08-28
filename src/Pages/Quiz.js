@@ -25,9 +25,11 @@ import FormLabel from "@mui/material/FormLabel";
 import toast from "react-hot-toast";
 import { Level1 } from "../Components/Level1";
 import { Level3 } from "../Components/Level3";
-
+import { doc, updateDoc } from "firebase/firestore";
 import { Level2 } from "../Components/Level2";
 import { Popuop } from "../Components/Popup";
+import { db, storage } from "../Firebase/Firebase";
+import QuizContext from "../QuizContext";
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -152,7 +154,7 @@ export const Quiz = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
   const [modalState, setModalState] = React.useState(false);
-
+  const ctx = React.useContext(QuizContext);
   const [level2type, setLevel2type] = React.useState("");
   const [leftData, setLeftData] = React.useState({
     Question1: "",
@@ -166,7 +168,6 @@ export const Quiz = () => {
     Question9: "",
     Question10: "",
     Question11: "",
-    Question12: "",
   });
   const [rightData, setRightData] = React.useState({
     Question1: "",
@@ -180,7 +181,6 @@ export const Quiz = () => {
     Question9: "",
     Question10: "",
     Question11: "",
-    Question12: "",
   });
   const [popsValue, setPopupValue] = React.useState();
 
@@ -209,18 +209,28 @@ export const Quiz = () => {
         setPopupValue(
           "You have you own thinking and  determined to find the answer for your curious thought, and you will be a better researchers and innovator."
         );
+        updateDoc(doc(db, "Quiz", ctx.user), {
+          answer: popsValue,
+        });
         setModalState(true);
       } else if (leftData.Question4 === "Practical solution") {
         setPopupValue(
           "you are scientific evidence  oriented thicker and will reassure the solution for any problems, and have wide capacity to help the people in your own thoughts."
         );
+        updateDoc(doc(db, "Quiz", ctx.user), {
+          answer: popsValue,
+        });
         setModalState(true);
       } else {
         setPopupValue(
           "You are  dreamer of your own world and you prefer to make new things and if your creativity appreciated you will become a scientist. "
         );
+        updateDoc(doc(db, "Quiz", ctx.user), {
+          answer: popsValue,
+        });
         setModalState(true);
       }
+      console.log(ctx.user);
     } else {
       if (rightData.Question1 === "") {
         toast.error("Fill the All Question");
@@ -228,27 +238,41 @@ export const Quiz = () => {
         setPopupValue(
           "You are self driven person and you always targeted toward the goal and you are have inspiration and you will become inspirations to others"
         );
+        updateDoc(doc(db, "Quiz", ctx.user), {
+          answer: popsValue,
+        });
         setModalState(true);
       } else if (rightData.Question1 === "Drama") {
         setPopupValue(
           "you are great dreamer and you clearly understand the intentions of the others and you like to make the thing clear and perfect."
         );
+        updateDoc(doc(db, "Quiz", ctx.user), {
+          answer: popsValue,
+        });
         setModalState(true);
       } else if (rightData.Question1 === "Art work ") {
         setPopupValue(
           "you are great fans of the beautiful things and most frequently visualize the enjoyed images in your mind."
         );
-
+        updateDoc(doc(db, "Quiz", ctx.user), {
+          answer: popsValue,
+        });
         setModalState(true);
       } else if (rightData.Question1 === "Music") {
         setPopupValue(
           "you are a verysharp observer but aways try to be calm and you  appricate the good things of others and you would be good teacher."
         );
+        updateDoc(doc(db, "Quiz", ctx.user), {
+          answer: popsValue,
+        });
         setModalState(true);
       } else {
         setPopupValue(
           "You are good observer and discuss more with yourself and you share less but beautiful ad happing thing with others, everybody enjoy you accompany."
         );
+        updateDoc(doc(db, "Quiz", ctx.user), {
+          answer: popsValue,
+        });
         setModalState(true);
       }
     }
@@ -386,7 +410,12 @@ export const Quiz = () => {
               {activeStep === 2 && (
                 <div className="text-center">
                   <button
-                    className="btn btn-primary m-2"
+                    className="btn text-white  px-4 m-2"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to left top, #167aee, #686ff1, #9b5feb, #c646dd, #eb12c6)",
+                      borderRadius: "30px",
+                    }}
                     onClick={() =>
                       setActiveStep((prevActiveStep) => prevActiveStep - 1)
                     }
@@ -394,8 +423,13 @@ export const Quiz = () => {
                     Back
                   </button>
                   <button
-                    className="btn btn-primary m-2"
+                    className="btn  text-white  m-2"
                     onClick={finalHandler}
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(to left top, #167aee, #686ff1, #9b5feb, #c646dd, #eb12c6)",
+                      borderRadius: "30px",
+                    }}
                   >
                     Submit
                   </button>

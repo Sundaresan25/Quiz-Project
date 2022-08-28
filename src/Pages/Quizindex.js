@@ -15,7 +15,7 @@ export const Quizindex = () => {
     name: "",
     email: "",
     phoneno: "",
-    sex: "",
+    gender: "",
     age: "",
     work: "",
     id: "",
@@ -35,7 +35,7 @@ export const Quizindex = () => {
       formData.name === "" ||
       formData.email === "" ||
       formData.phoneno === "" ||
-      formData.sex === "" ||
+      formData.gender === "" ||
       formData.age === "" ||
       formData.work === ""
     ) {
@@ -49,7 +49,7 @@ export const Quizindex = () => {
           name: "",
           email: "",
           phoneno: "",
-          sex: "",
+          gender: "",
           age: "",
           work: "",
           id: "",
@@ -71,11 +71,14 @@ export const Quizindex = () => {
           role="form"
           class="form  p-5  col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-4"
         >
+          <h4 className="text-weight-bold" style={{ color: "#b166a9" }}>
+            Campuzone
+          </h4>
           <div class="form-group">
             <input
               type="text"
               class="form-control"
-              placeholder="name"
+              placeholder="Name"
               id="name"
               onChange={onChangeHandler}
             />
@@ -83,7 +86,7 @@ export const Quizindex = () => {
               type="text"
               class="form-control"
               id="email"
-              placeholder="email"
+              placeholder="Email"
               onChange={onChangeHandler}
             />
             <input
@@ -93,15 +96,20 @@ export const Quizindex = () => {
               placeholder="Phone"
               onChange={onChangeHandler}
             />
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Gender"
-              id="sex"
+
+            <select
+              class="form-select form-control"
+              aria-label="Default select example"
+              id="gender"
               onChange={onChangeHandler}
-            />
+            >
+              <option selected>Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
+            </select>
             <input
-              type="text"
+              type="number"
               class="form-control"
               placeholder="Age"
               id="age"
@@ -121,7 +129,7 @@ export const Quizindex = () => {
               class="btn btn-primary btn-create-account form-control "
               onClick={submitHandler}
             >
-              Start Quiz
+              Test Your Brain
             </div>
           </div>
         </form>

@@ -7,7 +7,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import FormLabel from "@mui/material/FormLabel";
 
 export const Level3 = (props) => {
-  const { type, leftData, rightData, onChangeLeft } = props;
+  const { type, leftData, rightData, onChangeLeft, onChangeRight } = props;
   const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
   const [helperText, setHelperText] = React.useState("Choose wisely");
@@ -265,7 +265,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question7"
               value={rightData.Question7}
-              onChange={handleRadioChange}
+              onChange={onChangeRight}
             >
               <FormControlLabel
                 value="best"
@@ -300,7 +300,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question8"
               value={rightData.Question8}
-              onChange={handleRadioChange}
+              onChange={onChangeRight}
             >
               <FormControlLabel
                 value="best"
@@ -339,7 +339,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question9"
               value={rightData.Question9}
-              onChange={handleRadioChange}
+              onChange={onChangeRight}
             >
               <FormControlLabel
                 value="best"
@@ -379,7 +379,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question10"
               value={rightData.Question10}
-              onChange={handleRadioChange}
+              onChange={onChangeRight}
             >
               <FormControlLabel
                 value="best"
@@ -419,7 +419,7 @@ export const Level3 = (props) => {
               aria-labelledby="demo-error-radios"
               name="Question11"
               value={rightData.Question11}
-              onChange={handleRadioChange}
+              onChange={onChangeRight}
             >
               <FormControlLabel
                 value="best"

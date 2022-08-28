@@ -267,8 +267,13 @@ export const Level1 = (props) => {
           <FormHelperText>{helperText}</FormHelperText>
         </FormControl>
         <button
-          className="btn btn-primary m-2"
+          className="btn text-white px-4 m-2"
           onClick={(e) => submitHandler(e, form)}
+          style={{
+            backgroundImage:
+              "linear-gradient(to left top, #167aee, #686ff1, #9b5feb, #c646dd, #eb12c6)",
+            borderRadius: "30px",
+          }}
         >
           {" "}
           Next{" "}
